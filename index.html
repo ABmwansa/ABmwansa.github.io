@@ -15,83 +15,153 @@
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
+        }
+        header {
             background: linear-gradient(to bottom right, #6a11cb, #2575fc);
             padding: 2rem;
-            min-height: 100vh;
+            text-align: center;
+            color: #fff;
+        }
+        header h1 {
+            font-size: 3rem;
+        }
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 0.5rem 0;
+        }
+        nav ul {
+            list-style: none;
             display: flex;
             justify-content: center;
-            align-items: center;
         }
-
-        /* Portfolio Container */
-        .container {
-            max-width: 900px;
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 2rem;
+        nav ul li {
+            margin: 0 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #2575fc;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #6a11cb;
+        }
+        section {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+        section h2 {
+            font-size: 2rem;
+            color: #6a11cb;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .projects div {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .projects div:hover {
+            transform: scale(1.03);
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
             text-align: center;
         }
-
-        h1 {
-            color: #6a11cb;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .skills div {
+            background: #f5f5f5;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
         }
-
-        p {
-            color: #444;
-            font-size: 1.2rem;
-            margin: 1rem 0 2rem;
-        }
-
-        /* Button Styles */
-        .button {
-            display: inline-block;
-            padding: 0.7rem 1.5rem;
-            background: #2575fc;
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #6a11cb;
             color: #fff;
-            border: none;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
-        .button:hover {
-            background: #1e5ac4;
-        }
-
-        /* Links Section */
-        .socials {
-            margin-top: 2rem;
-        }
-
-        .socials a {
-            margin: 0 1rem;
-            color: #2575fc;
-            font-size: 1.5rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .socials a:hover {
-            color: #6a11cb;
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hi, I'm Amos Mwansa</h1>
-        <p>Welcome to my personal portfolio! I'm a passionate developer dedicated to creating elegant, efficient, and innovative solutions.</p>
-        <a href="https://github.com/ABmwansa" class="button" target="_blank">View My GitHub</a>
 
-        <div class="socials">
-            <h2>Connect With Me</h2>
-            <a href="https://www.linkedin.com/in/amos-mwansa" target="_blank">LinkedIn</a>
-            <a href="https://twitter.com/amosmwansa" target="_blank">Twitter</a>
-            <a href="mailto:amos@example.com" target="_blank">Email</a>
+<header>
+    <h1>Hi, I'm Amos Mwansa</h1>
+    <p>Welcome to my personal portfolio website!</p>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#projects">My Projects</a></li>
+        <li><a href="#skills">My Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am Amos Mwansa, a passionate developer who loves building efficient and elegant solutions. With expertise in web development, I strive to create modern, user-friendly, and scalable applications.</p>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+        <div>
+            <h3>Project 1: Portfolio Website</h3>
+            <p>A responsive portfolio website showcasing my work and skills.</p>
+        </div>
+        <div>
+            <h3>Project 2: Inventory Management System</h3>
+            <p>An application for managing stock efficiently using modern web technologies.</p>
+        </div>
+        <div>
+            <h3>Project 3: Data Visualization Dashboard</h3>
+            <p>A dashboard to visualize and analyze data trends.</p>
         </div>
     </div>
+</section>
+
+<section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills">
+        <div>HTML</div>
+        <div>CSS</div>
+        <div>JavaScript</div>
+        <div>React</div>
+        <div>Node.js</div>
+        <div>MongoDB</div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out to me at:</p>
+    <p><strong>Email:</strong> <a href="mailto:amos@example.com">amos@example.com</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/ABmwansa" target="_blank">github.com/ABmwansa</a></p>
+</section>
+
+<footer>
+    <p>© 2024 Amos Mwansa. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
