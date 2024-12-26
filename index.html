@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amos Mwansa | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <style>
         /* General Styles */
         :root {
@@ -58,7 +59,6 @@
 
         header p {
             font-size: 1.2rem;
-            color: var(--text-color);
         }
 
         nav {
@@ -67,7 +67,6 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         nav ul {
@@ -84,12 +83,6 @@
             text-decoration: none;
             color: var(--primary-color);
             font-weight: bold;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--link-hover-color);
         }
 
         .theme-toggle {
@@ -102,75 +95,47 @@
             border-radius: 50px;
             padding: 0.5rem 1.2rem;
             cursor: pointer;
-            transition: background 0.3s;
             font-weight: bold;
         }
 
-        .theme-toggle:hover {
-            background: var(--link-hover-color);
-        }
-
-        section {
+        .content, .projects, .skills, .certifications, .resume-section {
             padding: 4rem 2rem;
             max-width: 1200px;
             margin: auto;
-        }
-
-        section h2 {
             text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: var(--primary-color);
-        }
-
-        .content {
-            margin: auto;
-            color: var(--text-color);
-            text-align: center;
-        }
-
-        .projects, .skills, .certifications {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
         }
 
         .card {
             background: var(--secondary-color);
             padding: 1.5rem;
             border-radius: 8px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s, box-shadow 0.3s;
             max-width: 300px;
             text-align: center;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            margin: 1rem;
         }
 
         .card h3 {
             color: var(--primary-color);
-            margin-bottom: 1rem;
         }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background: var(--secondary-color);
+        .card a {
             color: var(--text-color);
-        }
-
-        footer a {
-            color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: bold;
         }
 
-        footer a:hover {
-            color: var(--link-hover-color);
+        .resume-section a {
+            background: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .resume-section a:hover {
+            background: var(--link-hover-color);
         }
     </style>
 </head>
@@ -188,53 +153,61 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#resume">Resume</a></li>
     </ul>
 </nav>
 
-<!-- Light/Dark Mode Toggle Button -->
+<!-- Light/Dark Toggle Button -->
 <button class="theme-toggle" id="theme-toggle">Switch to Light Mode</button>
 
-<section id="about">
+<section id="about" class="content" data-aos="fade-up">
     <h2>About Me</h2>
-    <div class="content">
-        <p>As a dedicated and driven student with an insatiable passion for technology, I am committed to pursuing a career as a Full Stack Developer and Software Engineer. Equipped with a robust set of technical and interpersonal skills, I aspire to contribute to innovative tech and engineering projects that enhance the digital landscape.</p>
+    <p>I am a Full Stack Developer with a passion for building innovative solutions.</p>
+</section>
+
+<section id="projects" class="projects" data-aos="fade-right">
+    <h2>Projects</h2>
+    <div class="card">
+        <h3>Project 1</h3>
+        <p>A brief description of the project.</p>
+        <a href="https://github.com/username/project1" target="_blank">GitHub</a> |
+        <a href="https://project1.live" target="_blank">Live Preview</a>
+    </div>
+    <div class="card">
+        <h3>Project 2</h3>
+        <p>A brief description of the project.</p>
+        <a href="https://github.com/username/project2" target="_blank">GitHub</a> |
+        <a href="https://project2.live" target="_blank">Live Preview</a>
     </div>
 </section>
 
-<!-- Remaining sections... -->
+<section id="resume" class="resume-section" data-aos="zoom-in">
+    <h2>Resume</h2>
+    <p>Download my latest resume here:</p>
+    <a href="resume.pdf" download>Download Resume</a>
+</section>
 
-<footer>
-    <p>&copy; 2024 Amos Mwansa. All Rights Reserved. | <a href="#">Back to top</a></p>
-</footer>
-
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
+    // Initialize AOS Library
+    AOS.init();
+
+    // Light/Dark Mode Toggle Script
     const themeToggle = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
-    // Function to toggle theme
-    function toggleTheme() {
-        if (root.getAttribute('data-theme') === 'light') {
-            root.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeToggle.textContent = 'Switch to Light Mode';
-        } else {
-            root.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            themeToggle.textContent = 'Switch to Dark Mode';
-        }
-    }
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = root.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', newTheme);
+        themeToggle.textContent = newTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+        localStorage.setItem('theme', newTheme);
+    });
 
-    // Event listener for the toggle button
-    themeToggle.addEventListener('click', toggleTheme);
-
-    // Load the user's theme preference from localStorage
     document.addEventListener('DOMContentLoaded', () => {
-        const storedTheme = localStorage.getItem('theme');
-        if (storedTheme) {
-            root.setAttribute('data-theme', storedTheme);
-            themeToggle.textContent = storedTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
-        }
+        const storedTheme = localStorage.getItem('theme') || 'dark';
+        root.setAttribute('data-theme', storedTheme);
+        themeToggle.textContent = storedTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
     });
 </script>
 </body>
