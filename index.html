@@ -5,92 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amos Mwansa | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="icon" href="profile.png" type="image/x-icon">
 </head>
 <body>
-<header>
-    <div class="header-container">
-        <h1>Amos Mwansa</h1>
-        <p>University of Zambia, Lusaka | Full Stack Developer | Software Engineer</p>
-        <nav>
-            <ul>
-                <li><a href="#objective">Objective</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#references">References</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<main>
-    <section id="objective" class="content-section">
-        <h2>Objective</h2>
-        <p>As a dedicated and driven student...</p>
-    </section>
-
-    <section id="education" class="content-section">
-        <h2>Education</h2>
-        <div class="education-card">
-            <h3>Secondary School</h3>
-            <p>Siavonga Secondary School, Zambia</p>
+    <header id="top">
+        <div class="nav-container">
+            <h1>Amos Mwansa</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button id="darkModeToggle">🌙</button>
         </div>
-        <div class="education-card">
-            <h3>University</h3>
-            <p>Bachelor of Software Engineering | University of Zambia, Lusaka</p>
-        </div>
-    </section>
+    </header>
 
-    <section id="experience" class="content-section">
-        <h2>Experience</h2>
-        <ul>
-            <li>Cash in-Cash out Officer</li>
-            <li>Sales Agent</li>
-            <li>Loan Officer at Buck Cash Capital Limited</li>
-            <li>Frontend Developer at Afrocentec Software Company Limited</li>
-        </ul>
-    </section>
+    <main>
+        <section id="hero">
+            <div class="hero-container">
+                <img src="profile.png" alt="Amos Mwansa" class="profile-picture">
+                <h2>Hi, I'm Amos Mwansa</h2>
+                <p>Aspiring Full Stack Developer & Software Engineer</p>
+                <a href="resume.pdf" download="Amos_Mwansa_Resume.pdf" class="btn">Download Resume</a>
+            </div>
+        </section>
 
-    <section id="projects" class="content-section">
-        <h2>Projects</h2>
-        <div class="project-card">
-            <h3>Zamace Digital Platform</h3>
-            <p>Developed with Afrocentec Software Company</p>
-        </div>
-        <div class="project-card">
-            <h3>Pharmacy Inventory Management System</h3>
-            <p>Created at the University of Zambia</p>
-        </div>
-    </section>
+        <section id="about">
+            <div class="about-container" data-aos="fade-up">
+                <h2>About Me</h2>
+                <p>I am a Software Engineering student passionate about creating innovative solutions. I thrive in dynamic environments where technology meets creativity.</p>
+            </div>
+        </section>
 
-    <section id="skills" class="content-section">
-        <h2>Skills</h2>
-        <ul>
-            <li>Front-end: React.js, Node.js, Laravel</li>
-            <li>Back-end: SQL, MERN/MARN Stack</li>
-            <li>Other: Project Management, Excel</li>
-        </ul>
-    </section>
+        <section id="skills">
+            <div class="skills-container" data-aos="fade-up">
+                <h2>Skills</h2>
+                <div class="skill-categories">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <p>React.js, HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <p>Node.js, Laravel, SQL</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Tools</h3>
+                        <p>Git, Tailwind, Excel</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="certifications" class="content-section">
-        <h2>Certifications</h2>
-        <ul>
-            <li>Cisco - Computer Systems (University of Zambia, 2022)</li>
-            <li>Cisco - CCNA1 (University of Zambia, 2023)</li>
-        </ul>
-    </section>
+        <section id="projects">
+            <div class="projects-container" data-aos="fade-up">
+                <h2>Projects</h2>
+                <div class="project-card">
+                    <h3>Zamace Digital Platform</h3>
+                    <p>Developed with Afrocentec Software Company</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Pharmacy Inventory System</h3>
+                    <p>University project managing inventory for pharmacies.</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="references" class="content-section">
-        <h2>References</h2>
-        <p>Martin Phiri | Acting HOD, University of Zambia | 0978412113</p>
-        <p>George Hazeula | Buck Cash Capital Director | 0977968676</p>
-    </section>
-</main>
+        <section id="contact">
+            <div class="contact-container" data-aos="fade-up">
+                <h2>Contact</h2>
+                <p>Feel free to get in touch:</p>
+                <ul>
+                    <li>📧 Email: <a href="mailto:mwansaamos4@gmail.com">mwansaamos4@gmail.com</a></li>
+                    <li>📞 Phone: +260 979 235 167</li>
+                    <li>🔗 LinkedIn: <a href="https://linkedin.com/in/amos-mwansa-9b9b76257">My LinkedIn</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-<footer>
-    <p>&copy; 2024 Amos Mwansa</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Amos Mwansa. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
