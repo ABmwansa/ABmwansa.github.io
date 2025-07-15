@@ -1,102 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amos Mwansa | Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="icon" href="profile.png" type="image/x-icon">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Amos Mwansa | Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+  <link rel="icon" href="profile.png" type="image/x-icon" />
+  <style>
+    /* Fallback quick styling if styles.css fails */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hero-container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .profile-picture {
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0077b6;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .skill-categories {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .skill-category {
+      flex: 1;
+      margin: 10px;
+    }
+
+    .project-card {
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #003366;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <header id="top">
-        <div class="nav-container">
-            <h1>Amos Mwansa</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button id="darkModeToggle">🌙</button>
+
+<header id="top">
+  <div class="nav-container">
+    <h1>Amos Mwansa</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="darkModeToggle">🌙</button>
+  </div>
+</header>
+
+<main>
+  <section id="hero">
+    <div class="hero-container">
+      <img src="amos.jpg" alt="Amos Mwansa" class="profile-picture" />
+      <h2>Hi, I'm Amos Mwansa</h2>
+      <p>Aspiring Full Stack Developer & Software Engineer</p>
+      <a href="resume.pdf" download="Amos_Mwansa_Resume.pdf" class="btn">Download Resume</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-container" data-aos="fade-up">
+      <h2>About Me</h2>
+      <p>I am a Software Engineering student passionate about creating innovative solutions. I thrive in dynamic environments where technology meets creativity.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="skills-container" data-aos="fade-up">
+      <h2>Skills</h2>
+      <div class="skill-categories">
+        <div class="skill-category">
+          <h3>Frontend</h3>
+          <p>React.js, HTML, CSS, JavaScript</p>
         </div>
-    </header>
-    <main>
-        <section id="hero">
-            <div class="hero-container">
-                <img src="amos.jpg" alt="Amos Mwansa" class="profile-picture">
-                <h2>Hi, I'm Amos Mwansa</h2>
-                <p>Aspiring Full Stack Developer & Software Engineer</p>
-                <a href="resume.pdf" download="Amos_Mwansa_Resume.pdf" class="btn">Download Resume</a>
-            </div>
-        </section>
+        <div class="skill-category">
+          <h3>Backend</h3>
+          <p>Node.js, Laravel, SQL</p>
+        </div>
+        <div class="skill-category">
+          <h3>Tools</h3>
+          <p>Git, Tailwind, Excel</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section id="about">
-            <div class="about-container" data-aos="fade-up">
-                <h2>About Me</h2>
-                <p>I am a Software Engineering student passionate about creating innovative solutions. I thrive in dynamic environments where technology meets creativity.</p>
-            </div>
-        </section>
+  <section id="projects">
+    <div class="projects-container" data-aos="fade-up">
+      <h2>Projects</h2>
 
-        <section id="skills">
-            <div class="skills-container" data-aos="fade-up">
-                <h2>Skills</h2>
-                <div class="skill-categories">
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <p>React.js, HTML, CSS, JavaScript</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Backend</h3>
-                        <p>Node.js, Laravel, SQL</p>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Tools</h3>
-                        <p>Git, Tailwind, Excel</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="project-card">
+        <h3>nas-taj website</h3>
+        <p>Developed with Afrocentec Software Company</p>
+        <a href="https://www.nas-taj.com" target="_blank" class="btn">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Zamace Digital Platform</h3>
+        <p>Developed with Afrocentec Software Company</p>
+        <a href="https://www.zamace.co.zm" target="_blank" class="btn">View Project</a>
+      </div>
 
-        <section id="projects">
-            <div class="projects-container" data-aos="fade-up">
-                <h2>Projects</h2>
-                <div class="project-card">
-                    <h3 href ="www.zamace.co.com">Zamace Digital Platform</h3>
-                    <p>Developed with Afrocentec Software Company</p>
-                    <a href ="www.zamace.co.com"class="btn">View Project</a>
-                </div>
-                <div class="project-card">
-                    <h3>Pharmacy Inventory System</h3>
-                    <p>University project managing inventory for pharmacies.</p>
-                    <a href="#" class="btn">View Project</a>
-                </div>
-            </div>
-        </section>
+      <div class="project-card">
+        <h3>Pharmacy Inventory System</h3>
+        <p>University project managing inventory for pharmacies.</p>
+        <a href="#" class="btn">View Project</a>
+      </div>
+    </div>
+  </section>
 
-        <section id="contact">
-            <div class="contact-container" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p>Feel free to get in touch:</p>
-                <ul>
-                    <li>📧 Email: <a href="mailto:mwansaamos4@gmail.com">mwansaamos4@gmail.com</a></li>
-                    <li>📞 Phone: +260 979 235 167</li>
-                    <li>🔗 LinkedIn: <a href="https://linkedin.com/in/amos-mwansa-9b9b76257">My LinkedIn</a></li>
-                </ul>
-            </div>
-        </section>
-    </main>
+  <section id="contact">
+    <div class="contact-container" data-aos="fade-up">
+      <h2>Contact</h2>
+      <p>Feel free to get in touch:</p>
+      <ul>
+        <li>📧 Email: <a href="mailto:mwansaamos4@gmail.com">mwansaamos4@gmail.com</a></li>
+        <li>📞 Phone: +260 979 235 167</li>
+        <li>🔗 LinkedIn: <a href="https://linkedin.com/in/amos-mwansa-9b9b76257" target="_blank">My LinkedIn</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
 
-    <footer>
-        <p>&copy; 2024 Amos Mwansa. All Rights Reserved.</p>
-    </footer>
+<footer>
+  <p>&copy; 2024 Amos Mwansa. All Rights Reserved.</p>
+</footer>
 
-    <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>
