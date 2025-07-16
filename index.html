@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   <link rel="icon" href="profile.png" type="image/x-icon" />
   <style>
-    /* Fallback quick styling if styles.css fails */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -35,6 +34,7 @@
       list-style: none;
       display: flex;
       gap: 20px;
+      padding-left: 0;
     }
 
     nav ul li a {
@@ -64,7 +64,7 @@
 
     section {
       padding: 40px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
 
@@ -75,8 +75,12 @@
     }
 
     .skill-category {
-      flex: 1;
+      flex: 1 1 45%;
+      background: #fff;
+      padding: 20px;
       margin: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
     }
 
     .project-card {
@@ -109,7 +113,6 @@
       </ul>
     </nav>
     <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
-
   </div>
 </header>
 
@@ -134,18 +137,47 @@
     <div class="skills-container" data-aos="fade-up">
       <h2>Skills</h2>
       <div class="skill-categories">
+
         <div class="skill-category">
           <h3>Frontend</h3>
-          <p>React.js, HTML, CSS, JavaScript</p>
+          <p>HTML5, CSS3, JavaScript, React.js, Next.js, Tailwind CSS, Bootstrap</p>
         </div>
+
         <div class="skill-category">
           <h3>Backend</h3>
-          <p>Node.js, Laravel, SQL</p>
+          <p>Node.js, Express.js, PHP, Laravel, SQL, PostgreSQL, MongoDB, REST APIs</p>
         </div>
+
         <div class="skill-category">
-          <h3>Tools</h3>
-          <p>Git, Tailwind, Excel</p>
+          <h3>DevOps & Tools</h3>
+          <p>Git, GitHub, Docker, CI/CD, Postman, VS Code, Nginx</p>
         </div>
+
+        <div class="skill-category">
+          <h3>Security</h3>
+          <p>OWASP Top 10, Authentication & Authorization, HTTPS, JWT, Hashing, Input Validation, Firewalls</p>
+        </div>
+
+        <div class="skill-category">
+          <h3>Networking</h3>
+          <p>TCP/IP, DNS, HTTP/HTTPS, Subnetting, VPNs, Routing, Basic Linux Networking</p>
+        </div>
+
+        <div class="skill-category">
+          <h3>Cloud & Hosting</h3>
+          <p>Firebase, Netlify, Vercel, cPanel, GitHub Pages, AWS (Basic)</p>
+        </div>
+
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <p>Problem Solving, Teamwork, Agile & Scrum, Communication, Project Management</p>
+        </div>
+
+        <div class="skill-category">
+          <h3>Other Technical Skills</h3>
+          <p>Data Structures & Algorithms, API Integration, Responsive Design, SQL Joins, Debugging, Linux Basics</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -164,12 +196,12 @@
         <p>Developed with Afrocentec Software Company</p>
         <a href="https://www.zamace.co.zm" target="_blank" class="btn">View Project</a>
       </div>
-
       <div class="project-card">
         <h3>Pharmacy Inventory System</h3>
         <p>University project managing inventory for pharmacies.</p>
         <a href="#" class="btn">View Project</a>
       </div>
+
     </div>
   </section>
 
