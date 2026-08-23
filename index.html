@@ -1,102 +1,753 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-   <meta name="description" content="Amos Mwansa's professional portfolio. Full Stack Software Engineer specializing in modern web technologies, backend systems, and digital innovation.">
-<meta name="keywords" content="Amos Mwansa, Software Engineer, Web Developer, Portfolio, GitHub Pages, Full Stack Developer, Zambia">
-<meta name="author" content="Amos Mwansa">
-<meta name="robots" content="index, follow">
 
-  <title>Amos Mwansa | Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta
+    name="description"
+    content="Portfolio of Amos Mwansa, a Software Engineering and ICT professional from Zambia with experience in full-stack development, frontend development, IT support, networking, systems documentation and digital solutions."
+  />
+
+  <meta
+    name="keywords"
+    content="Amos Mwansa, Software Engineer Zambia, ICT Support Zambia, Full Stack Developer Zambia, Frontend Developer, React Developer, Web Developer, Network Support, ZAMACE, United African Grain, UAG, ZABS"
+  />
+
+  <meta name="author" content="Amos Mwansa" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Amos Mwansa | Software Engineer & ICT Professional" />
+  <meta
+    property="og:description"
+    content="Software Engineer and ICT professional specialising in web development, technical support, networking and digital systems."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://abmwansa.github.io/" />
+
+  <title>Amos Mwansa | Software Engineer & ICT Professional</title>
+
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-  <link rel="icon" href="profile.png" type="image/x-icon" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+  />
+
+  <link rel="icon" href="profile.png" type="image/png" />
+
 </head>
+
 <body>
+
+<!-- ================= HEADER ================= -->
 
 <header id="top">
   <div class="nav-container">
+
     <h1>Amos Mwansa</h1>
 
-    <button id="burger" aria-label="Toggle navigation">☰</button>
+    <button id="burger" aria-label="Toggle navigation">
+      ☰
+    </button>
 
     <nav id="navbar">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
-    <button id="darkModeToggle" aria-label="Toggle dark mode">🌙</button>
+    <button id="darkModeToggle" aria-label="Toggle dark mode">
+      🌙
+    </button>
+
   </div>
 </header>
 
+
 <main>
-  <section id="hero">
-    <div class="hero-container">
-      <img src="amos.jpg" alt="Amos Mwansa" class="profile-picture" />
-      <h2>Hi, I'm Amos Mwansa</h2>
-      <p>Full Stack Developer & Software Engineer</p>
-      <a href="resume.pdf" download="Amos_Mwansa_Resume.pdf" class="btn">Download Resume</a>
+
+<!-- ================= HERO ================= -->
+
+<section id="hero">
+
+  <div class="hero-container" data-aos="fade-up">
+
+    <img
+      src="amos.jpg"
+      alt="Amos Mwansa - Software Engineer and ICT Professional"
+      class="profile-picture"
+    />
+
+    <h2>Hi, I'm Amos Mwansa</h2>
+
+    <p>
+      Software Engineer | Full-Stack Developer | ICT Support Professional
+    </p>
+
+    <p>
+      Building reliable digital solutions and supporting the technology
+      behind modern organisations.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="resume.pdf"
+        download="Amos_Mwansa_CV.pdf"
+        class="btn"
+      >
+        Download CV
+      </a>
+
+      <a href="#projects" class="btn">
+        View My Work
+      </a>
+
     </div>
-  </section>
 
-  <section id="about">
-    <div class="about-container" data-aos="fade-up">
-      <h2>About Me</h2>
-      <p>
-  I am a dedicated Software Engineer with a degree in Software Engineering  from the University of Zambia and a strong passion for building innovative, user-focused digital solutions. I thrive in fast-paced, collaborative environments where technology, creativity, and problem-solving intersect to deliver impactful results.
-</p>
+  </div>
 
-    </div>
-  </section>
+</section>
 
-  <section id="skills">
-    <div class="skills-container" data-aos="fade-up">
-      <h2>Skills</h2>
-      <div class="skill-categories">
-        <div class="skill-category"><h3>Frontend</h3><p>HTML5, CSS3, JavaScript, React.js, Next.js, Tailwind CSS, Bootstrap</p></div>
-        <div class="skill-category"><h3>Backend</h3><p>Node.js, Express.js, PHP, Laravel, SQL, PostgreSQL, MongoDB, REST APIs</p></div>
-        <div class="skill-category"><h3>DevOps & Tools</h3><p>Git, GitHub, Docker, CI/CD, Postman, VS Code, Nginx</p></div>
-        <div class="skill-category"><h3>Security</h3><p>OWASP Top 10, Authentication & Authorization, HTTPS, JWT, Hashing, Input Validation, Firewalls</p></div>
-        <div class="skill-category"><h3>Networking</h3><p>TCP/IP, DNS, HTTP/HTTPS, Subnetting, VPNs, Routing, Basic Linux Networking</p></div>
-        <div class="skill-category"><h3>Cloud & Hosting</h3><p>Firebase, Netlify, Vercel, cPanel, GitHub Pages, AWS (Basic)</p></div>
-        <div class="skill-category"><h3>Soft Skills</h3><p>Problem Solving, Teamwork, Agile & Scrum, Communication, Project Management</p></div>
-        <div class="skill-category"><h3>Other Technical Skills</h3><p>Data Structures & Algorithms, API Integration, Responsive Design, SQL Joins, Debugging, Linux Basics</p></div>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+  <div class="about-container" data-aos="fade-up">
+
+    <h2>About Me</h2>
+
+    <p>
+      I am a Software Engineering graduate from the University of Zambia
+      with practical experience in software development, ICT support,
+      networking, systems documentation and business technology solutions.
+    </p>
+
+    <p>
+      My professional experience includes frontend development at
+      Afrocentec Zambia, IT and systems support at Nas-Taj Infrastructure
+      Services, development work on the ZAMACE platform, frontend and
+      documentation support for United African Grain (UAG), and digital
+      technology work supporting the Zambia Bureau of Standards (ZABS).
+    </p>
+
+    <p>
+      I enjoy solving practical problems with technology, whether that
+      involves developing a web application, troubleshooting a computer
+      or network problem, improving a business process, supporting users,
+      or documenting how a system works.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+  <div class="skills-container" data-aos="fade-up">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skill-categories">
+
+      <div class="skill-category">
+        <h3>Frontend Development</h3>
+        <p>
+          HTML5, CSS3, JavaScript, React.js, Next.js,
+          Tailwind CSS, Bootstrap and Responsive Web Design
+        </p>
       </div>
-    </div>
-  </section>
 
-  <section id="projects">
-    <div class="projects-container" data-aos="fade-up">
-      <h2>Projects</h2>
-      <div class="project-card"><h3>nas-taj website</h3><p>Developed with Afrocentec Software Company</p><a href="https://www.nas-taj.com" target="_blank" class="btn">View Project</a></div>
-      <div class="project-card"><h3>Zamace Digital Platform</h3><p>Developed with Afrocentec Software Company</p><a href="https://www.zamace.co.zm" target="_blank" class="btn">View Project</a></div>
-      <div class="project-card"><h3>Pharmacy Inventory System</h3><p>University project managing inventory for pharmacies.</p><a href="#" class="btn">View Project</a></div>
-    </div>
-  </section>
 
-  <section id="contact">
-    <div class="contact-container" data-aos="fade-up">
-      <h2>Contact</h2>
-      <ul>
-        <li>📧 Email: <a href="mailto:mwansaamos4@gmail.com">mwansaamos4@gmail.com</a></li>
-        <li>📞 Phone: +260 979 235 167</li>
-        <li>🔗 LinkedIn: <a href="https://linkedin.com/in/amos-mwansa-9b9b76257" target="_blank">My LinkedIn</a></li>
-      </ul>
+      <div class="skill-category">
+        <h3>Backend Development</h3>
+        <p>
+          Node.js, Express.js, PHP, Laravel,
+          REST APIs, MongoDB, SQL and MySQL
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>ICT Support</h3>
+        <p>
+          Windows Support, Software Installation,
+          Computer Troubleshooting, Hardware Support,
+          Printer Support, Device Setup and End-User Support
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>Networking</h3>
+        <p>
+          TCP/IP, IPv4/IPv6, LANs, Routers, Switches,
+          DNS, Wi-Fi, Network Troubleshooting,
+          Subnetting and Basic Network Security
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>Development Tools</h3>
+        <p>
+          Git, GitHub, GitLab, VS Code,
+          Postman, Branch Management,
+          Merge Requests and Version Control
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>CMS & Web Platforms</h3>
+        <p>
+          WordPress, Payload CMS,
+          Website Administration,
+          Content Management and Deployment
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>Hosting & Deployment</h3>
+        <p>
+          GitHub Pages, Netlify, Vercel,
+          cPanel and Basic Web Server Administration
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>Systems & Security</h3>
+        <p>
+          Authentication, Access Control,
+          Endpoint Security, Software Updates,
+          Data Protection and Basic Cybersecurity Practices
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>Project & Operations</h3>
+        <p>
+          Project Management, Technical Documentation,
+          Inventory Management, Procurement Support,
+          BoQ Preparation and Operational Reporting
+        </p>
+      </div>
+
+
+      <div class="skill-category">
+        <h3>Professional Skills</h3>
+        <p>
+          Problem Solving, Communication,
+          Teamwork, Technical Support,
+          Documentation and Continuous Learning
+        </p>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section id="experience">
+
+  <div class="projects-container" data-aos="fade-up">
+
+    <h2>Professional Experience</h2>
+
+
+    <!-- NAS-TAJ -->
+
+    <div class="project-card">
+
+      <h3>Nas-Taj Infrastructure Services Limited</h3>
+
+      <h4>
+        Business Development Officer / Stores Controller / IT Support
+      </h4>
+
+      <p>
+        <strong>2024 – Present</strong>
+      </p>
+
+      <p>
+        Provided IT and systems support, assisted users with technical
+        issues, supported digital record keeping and helped improve
+        communication and reporting processes.
+      </p>
+
+      <p>
+        Also supported website development and maintenance, inventory
+        control, procurement, BoQ and tender preparation, project
+        coordination and company operations.
+      </p>
+
+    </div>
+
+
+    <!-- AFROCENTEC -->
+
+    <div class="project-card">
+
+      <h3>Afrocentec Zambia Limited</h3>
+
+      <h4>Frontend Developer</h4>
+
+      <p>
+        <strong>2024 – 2025</strong>
+      </p>
+
+      <p>
+        Developed and improved responsive user interfaces for web-based
+        platforms using JavaScript and React.js.
+      </p>
+
+      <p>
+        Worked with technical teams on UI implementation, testing,
+        accessibility, cross-browser compatibility, troubleshooting,
+        version control and deployment-related tasks.
+      </p>
+
+    </div>
+
+
+    <!-- UAG -->
+
+    <div class="project-card">
+
+      <h3>United African Grain (UAG)</h3>
+
+      <h4>Website / Platform Support</h4>
+
+      <p>
+        <strong>2026</strong>
+      </p>
+
+      <p>
+        Supported frontend updates through Git and GitLab,
+        including website content changes, navigation restructuring,
+        asset integration and merge-request preparation.
+      </p>
+
+      <p>
+        Also prepared technical and user-process documentation covering
+        major platform workflows including authentication, GRNs,
+        delivery notes, loading orders, product management,
+        onboarding and weighbridge operations.
+      </p>
+
+    </div>
+
+
+    <!-- ZABS -->
+
+    <div class="project-card">
+
+      <h3>Zambia Bureau of Standards (ZABS)</h3>
+
+      <h4>Web & Digital Technology Support</h4>
+
+      <p>
+        <strong>2026</strong>
+      </p>
+
+      <p>
+        Contributed to website and content-management work using
+        modern web technologies including React/Next.js and Payload CMS.
+      </p>
+
+      <p>
+        Also supported digital communication initiatives including
+        printable website QR codes and staff digital contact-card
+        QR solutions.
+      </p>
+
+    </div>
+
+
+    <!-- BUCK CASH -->
+
+    <div class="project-card">
+
+      <h3>Buck Cash Capital Limited</h3>
+
+      <h4>Sales Personnel / Cash-In Cash-Out Agent</h4>
+
+      <p>
+        <strong>2019 – 2021</strong>
+      </p>
+
+      <p>
+        Handled customer transactions, account verification,
+        receipts, customer service and sales of company products
+        and services.
+      </p>
+
+      <p>
+        Supported documentation, customer follow-ups and
+        loan recovery activities.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+  <div class="projects-container" data-aos="fade-up">
+
+    <h2>Featured Projects</h2>
+
+
+    <!-- NAS TAJ WEBSITE -->
+
+    <div class="project-card">
+
+      <h3>Nas-Taj Company Website</h3>
+
+      <p>
+        <strong>Full-Stack Developer & Website Administrator</strong>
+      </p>
+
+      <p>
+        Designed and developed the official Nas-Taj company website
+        using React.js, Node.js, Express and MongoDB.
+      </p>
+
+      <p>
+        Developed responsive pages, content-management functionality,
+        company project sections and improved the website's usability,
+        performance and online presence.
+      </p>
+
+      <a
+        href="https://www.nas-taj.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+      >
+        View Project
+      </a>
+
+    </div>
+
+
+    <!-- ZAMACE -->
+
+    <div class="project-card">
+
+      <h3>ZAMACE Integrated Digital Platform</h3>
+
+      <p>
+        <strong>Frontend Development</strong>
+      </p>
+
+      <p>
+        Contributed to the development of the Zambia Agricultural
+        Commodity Exchange digital platform while working with
+        Afrocentec Zambia.
+      </p>
+
+      <p>
+        Worked on responsive interfaces, platform modules,
+        interactive components, testing and frontend functionality.
+      </p>
+
+      <a
+        href="https://www.zamace.co.zm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+      >
+        View Project
+      </a>
+
+    </div>
+
+
+    <!-- UAG -->
+
+    <div class="project-card">
+
+      <h3>United African Grain Platform</h3>
+
+      <p>
+        <strong>Frontend & Technical Documentation Support</strong>
+      </p>
+
+      <p>
+        Contributed frontend updates to the UAG platform,
+        including commodities and fertilizer content improvements,
+        chart integration and GitLab-based change management.
+      </p>
+
+      <p>
+        Prepared technical documentation for platform workflows
+        including warehouse operations, GRNs, loading orders,
+        delivery notes, weighbridge processes and onboarding.
+      </p>
+
+    </div>
+
+
+    <!-- ZABS -->
+
+    <div class="project-card">
+
+      <h3>ZABS Digital Platform Support</h3>
+
+      <p>
+        <strong>Website & Digital Services</strong>
+      </p>
+
+      <p>
+        Supported Zambia Bureau of Standards digital initiatives,
+        including website/content-management work and the creation
+        of digital QR solutions for organisational and staff
+        contact information.
+      </p>
+
+      <a
+        href="https://www.zabs.org.zm"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn"
+      >
+        Visit ZABS
+      </a>
+
+    </div>
+
+
+    <!-- PHARMACY SYSTEM -->
+
+    <div class="project-card">
+
+      <h3>Pharmacy Inventory Management System</h3>
+
+      <p>
+        <strong>University Final-Year Project</strong>
+      </p>
+
+      <p>
+        Developed an inventory management system designed to
+        improve the management and tracking of medicine stock
+        for the University of Zambia clinic.
+      </p>
+
+    </div>
+
+
+    <!-- OPERATIONS -->
+
+    <div class="project-card">
+
+      <h3>Technical Operations & Project Support</h3>
+
+      <p>
+        Worked on the WARMA Laboratory construction project and
+        Nas-Taj Head Office project in supervision, stores control,
+        materials management, procurement coordination and
+        technical reporting roles.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications">
+
+  <div class="skills-container" data-aos="fade-up">
+
+    <h2>Education & Certifications</h2>
+
+    <div class="skill-categories">
+
+
+      <div class="skill-category">
+
+        <h3>Bachelor of Computer Science</h3>
+
+        <p>
+          Software Engineering
+        </p>
+
+        <p>
+          University of Zambia
+        </p>
+
+      </div>
+
+
+      <div class="skill-category">
+
+        <h3>CCNAv7: Introduction to Networks</h3>
+
+        <p>
+          Cisco Networking Academy
+        </p>
+
+        <p>
+          Completed May 2023
+        </p>
+
+      </div>
+
+
+      <div class="skill-category">
+
+        <h3>IT Essentials</h3>
+
+        <p>
+          Cisco Networking Academy
+        </p>
+
+        <p>
+          Completed October 2022
+        </p>
+
+      </div>
+
+
+      <div class="skill-category">
+
+        <h3>Project Management & Planning</h3>
+
+        <p>
+          University of Zambia
+        </p>
+
+      </div>
+
+
+      <div class="skill-category">
+
+        <h3>Occupational Health & Safety</h3>
+
+        <p>
+          University of Zambia
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+  <div class="contact-container" data-aos="fade-up">
+
+    <h2>Let's Connect</h2>
+
+    <p>
+      I am open to opportunities in software development,
+      ICT support, systems administration, networking and
+      technology-driven projects.
+    </p>
+
+    <ul>
+
+      <li>
+        📍 Location:
+        Siavonga, Zambia
+      </li>
+
+      <li>
+        📧 Email:
+        <a href="mailto:mwansaamos4@gmail.com">
+          mwansaamos4@gmail.com
+        </a>
+      </li>
+
+      <li>
+        📞 Phone:
+        <a href="tel:+260979235167">
+          +260 979 235 167
+        </a>
+      </li>
+
+      <li>
+        🔗 LinkedIn:
+        <a
+          href="https://linkedin.com/in/amos-mwansa-9b9b76257"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View LinkedIn Profile
+        </a>
+      </li>
+
+    </ul>
+
+    <a
+      href="mailto:mwansaamos4@gmail.com"
+      class="btn"
+    >
+      Contact Me
+    </a>
+
+  </div>
+
+</section>
+
 </main>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-  <p>&copy; 2024 Amos Mwansa. All Rights Reserved.</p>
+
+  <p>
+    &copy; 2026 Amos Mwansa. All Rights Reserved.
+  </p>
+
+  <p>
+    Software Engineer | Full-Stack Developer | ICT Professional
+  </p>
+
 </footer>
 
+
+<!-- ================= SCRIPTS ================= -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
 <script src="script.js"></script>
+
 </body>
 </html>
