@@ -1,77 +1,81 @@
 /* =========================================================
    AMOS MWANSA PORTFOLIO
-   Main JavaScript
+   MAIN JAVASCRIPT
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
-     ELEMENTS
-     ========================= */
+  /* =========================================================
+     ELEMENT REFERENCES
+     ========================================================= */
 
   const body = document.body;
-
   const header = document.querySelector("header");
 
   const burger = document.getElementById("burger");
-
   const navbar = document.getElementById("navbar");
+  const darkModeToggle = document.getElementById("darkModeToggle");
 
-  const darkModeToggle =
-    document.getElementById("darkModeToggle");
-
-  const navLinks =
-    document.querySelectorAll("#navbar a");
-
-  const sections =
-    document.querySelectorAll("main section");
+  const navLinks = document.querySelectorAll("#navbar a");
+  const sections = document.querySelectorAll("main section");
 
 
-  /* =========================
-     AOS INITIALIZATION
-     ========================= */
+  /* =========================================================
+     AOS ANIMATION
+     ========================================================= */
+
+  /*
+    AOS is only activated if the library loaded successfully.
+
+    The CSS also contains a fallback, so if AOS fails,
+    your Skills, Experience, Projects and Certifications
+    will still remain visible.
+  */
 
   if (typeof AOS !== "undefined") {
 
+    document.documentElement.classList.add("aos-enabled");
+
     AOS.init({
-
       duration: 700,
-
       easing: "ease-out-cubic",
-
       once: true,
-
-      offset: 70
-
+      offset: 60
     });
 
   }
 
 
-  /* =========================
+  /* =========================================================
      DARK MODE
-     ========================= */
+     ========================================================= */
 
-  const savedTheme =
-    localStorage.getItem("portfolio-theme");
+  const savedTheme = localStorage.getItem("portfolio-theme");
 
-  const systemPrefersDark =
+  const prefersDarkMode =
     window.matchMedia &&
-    window.matchMedia(
-      "(prefers-color-scheme: dark)"
-    ).matches;
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 
   function enableDarkMode() {
 
     body.classList.add("dark-mode");
 
-    darkModeToggle.textContent = "☀️";
+    if (darkModeToggle) {
 
-    darkModeToggle.setAttribute(
-      "aria-label",
-      "Switch to light mode"
-    );
+      darkModeToggle.textContent = "☀️";
+
+      darkModeToggle.setAttribute(
+        "aria-label",
+        "Switch to light mode"
+      );
+
+      darkModeToggle.setAttribute(
+        "title",
+        "Switch to light mode"
+      );
+
+    }
 
   }
 
@@ -80,15 +84,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     body.classList.remove("dark-mode");
 
-    darkModeToggle.textContent = "🌙";
+    if (darkModeToggle) {
 
-    darkModeToggle.setAttribute(
-      "aria-label",
-      "Switch to dark mode"
-    );
+      darkModeToggle.textContent = "🌙";
+
+      darkModeToggle.setAttribute(
+        "aria-label",
+        "Switch to dark mode"
+      );
+
+      darkModeToggle.setAttribute(
+        "title",
+        "Switch to dark mode"
+      );
+
+    }
 
   }
 
+
+  /* Load saved theme */
 
   if (savedTheme === "dark") {
 
@@ -98,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     enableLightMode();
 
-  } else if (systemPrefersDark) {
+  } else if (prefersDarkMode) {
 
     enableDarkMode();
 
@@ -109,48 +124,49 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  /* Dark mode button */
+
   if (darkModeToggle) {
 
-    darkModeToggle.addEventListener(
-      "click",
-      () => {
+    darkModeToggle.addEventListener("click", () => {
 
-        const darkModeEnabled =
-          body.classList.contains(
-            "dark-mode"
-          );
+      const darkModeEnabled =
+        body.classList.contains("dark-mode");
 
-        if (darkModeEnabled) {
 
-          enableLightMode();
+      if (darkModeEnabled) {
 
-          localStorage.setItem(
-            "portfolio-theme",
-            "light"
-          );
+        enableLightMode();
 
-        } else {
+        localStorage.setItem(
+          "portfolio-theme",
+          "light"
+        );
 
-          enableDarkMode();
+      } else {
 
-          localStorage.setItem(
-            "portfolio-theme",
-            "dark"
-          );
+        enableDarkMode();
 
-        }
+        localStorage.setItem(
+          "portfolio-theme",
+          "dark"
+        );
 
       }
-    );
+
+    });
 
   }
 
 
-  /* =========================
-     MOBILE MENU
-     ========================= */
+  /* =========================================================
+     MOBILE NAVIGATION
+     ========================================================= */
 
   function openMenu() {
+
+    if (!navbar || !burger) return;
+
 
     navbar.classList.add("open");
 
@@ -158,9 +174,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     burger.textContent = "✕";
 
+
     burger.setAttribute(
       "aria-expanded",
       "true"
+    );
+
+
+    burger.setAttribute(
+      "aria-label",
+      "Close navigation"
     );
 
   }
@@ -168,15 +191,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeMenu() {
 
+    if (!navbar || !burger) return;
+
+
     navbar.classList.remove("open");
 
     body.classList.remove("menu-open");
 
     burger.textContent = "☰";
 
+
     burger.setAttribute(
       "aria-expanded",
       "false"
+    );
+
+
+    burger.setAttribute(
+      "aria-label",
+      "Open navigation"
     );
 
   }
@@ -184,10 +217,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleMenu() {
 
-    const isOpen =
-      navbar.classList.contains("open");
+    if (!navbar) return;
 
-    if (isOpen) {
+
+    if (navbar.classList.contains("open")) {
 
       closeMenu();
 
@@ -207,6 +240,13 @@ document.addEventListener("DOMContentLoaded", () => {
       "false"
     );
 
+
+    burger.setAttribute(
+      "aria-controls",
+      "navbar"
+    );
+
+
     burger.addEventListener(
       "click",
       toggleMenu
@@ -215,95 +255,109 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================
-     CLOSE MOBILE MENU
-     WHEN LINK IS CLICKED
-     ========================= */
+  /* =========================================================
+     CLOSE MENU AFTER CLICKING NAVIGATION LINK
+     ========================================================= */
 
   navLinks.forEach(link => {
 
-    link.addEventListener(
-      "click",
-      () => {
+    link.addEventListener("click", () => {
 
-        if (
-          window.innerWidth <= 820
-        ) {
+      if (window.innerWidth <= 820) {
 
-          closeMenu();
-
-        }
+        closeMenu();
 
       }
-    );
+
+    });
 
   });
 
 
-  /* =========================
-     ESC KEY CLOSE MENU
-     ========================= */
+  /* =========================================================
+     CLOSE MOBILE MENU WITH ESC KEY
+     ========================================================= */
 
-  document.addEventListener(
-    "keydown",
-    event => {
+  document.addEventListener("keydown", event => {
 
-      if (
-        event.key === "Escape" &&
-        navbar.classList.contains(
-          "open"
-        )
-      ) {
+    if (
+      event.key === "Escape" &&
+      navbar &&
+      navbar.classList.contains("open")
+    ) {
 
-        closeMenu();
-
-      }
+      closeMenu();
 
     }
-  );
+
+  });
 
 
-  /* =========================
-     CLOSE MENU WHEN RESIZING
-     TO DESKTOP
-     ========================= */
+  /* =========================================================
+     CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+     ========================================================= */
 
-  window.addEventListener(
-    "resize",
-    () => {
+  document.addEventListener("click", event => {
 
-      if (
-        window.innerWidth > 820 &&
-        navbar.classList.contains(
-          "open"
-        )
-      ) {
+    if (!navbar || !burger) return;
 
-        closeMenu();
 
-      }
+    const clickedInsideNavbar =
+      navbar.contains(event.target);
+
+
+    const clickedBurger =
+      burger.contains(event.target);
+
+
+    if (
+      navbar.classList.contains("open") &&
+      !clickedInsideNavbar &&
+      !clickedBurger
+    ) {
+
+      closeMenu();
 
     }
-  );
+
+  });
 
 
-  /* =========================
+  /* =========================================================
+     RESET MOBILE NAVIGATION WHEN SCREEN BECOMES DESKTOP
+     ========================================================= */
+
+  window.addEventListener("resize", () => {
+
+    if (
+      window.innerWidth > 820 &&
+      navbar &&
+      navbar.classList.contains("open")
+    ) {
+
+      closeMenu();
+
+    }
+
+  });
+
+
+  /* =========================================================
      HEADER SCROLL EFFECT
-     ========================= */
+     ========================================================= */
 
   function updateHeader() {
 
+    if (!header) return;
+
+
     if (window.scrollY > 20) {
 
-      header.classList.add(
-        "scrolled"
-      );
+      header.classList.add("scrolled");
 
     } else {
 
-      header.classList.remove(
-        "scrolled"
-      );
+      header.classList.remove("scrolled");
 
     }
 
@@ -316,178 +370,174 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener(
     "scroll",
     updateHeader,
-    {
-      passive: true
-    }
+    { passive: true }
   );
 
 
-  /* =========================
-     ACTIVE NAVIGATION LINK
-     ========================= */
-
-  function updateActiveNav() {
-
-    const scrollPosition =
-      window.scrollY + 160;
-
-
-    sections.forEach(
-      section => {
-
-        const sectionTop =
-          section.offsetTop;
-
-        const sectionHeight =
-          section.offsetHeight;
-
-        const sectionId =
-          section.getAttribute("id");
-
-
-        if (
-          scrollPosition >=
-            sectionTop &&
-
-          scrollPosition <
-            sectionTop +
-            sectionHeight
-        ) {
-
-          navLinks.forEach(
-            link => {
-
-              link.classList.remove(
-                "active"
-              );
-
-              const href =
-                link.getAttribute(
-                  "href"
-                );
-
-              if (
-                href ===
-                `#${sectionId}`
-              ) {
-
-                link.classList.add(
-                  "active"
-                );
-
-              }
-
-            }
-          );
-
-        }
-
-      }
-    );
-
-  }
-
-
-  updateActiveNav();
-
-
-  window.addEventListener(
-    "scroll",
-    updateActiveNav,
-    {
-      passive: true
-    }
-  );
-
-
-  /* =========================
-     SMOOTH INTERNAL LINKS
-     ========================= */
+  /* =========================================================
+     SMOOTH INTERNAL NAVIGATION
+     ========================================================= */
 
   document
-    .querySelectorAll(
-      'a[href^="#"]'
-    )
+    .querySelectorAll('a[href^="#"]')
     .forEach(anchor => {
 
-      anchor.addEventListener(
-        "click",
-        event => {
+      anchor.addEventListener("click", event => {
 
-          const targetId =
-            anchor.getAttribute(
-              "href"
-            );
+        const targetId =
+          anchor.getAttribute("href");
 
 
-          if (
-            !targetId ||
-            targetId === "#"
-          ) {
+        /*
+          Ignore empty # links.
+          This also prevents errors from placeholder project links.
+        */
 
-            return;
+        if (
+          !targetId ||
+          targetId === "#"
+        ) {
 
-          }
-
-
-          const target =
-            document.querySelector(
-              targetId
-            );
-
-
-          if (target) {
-
-            event.preventDefault();
-
-
-            const headerHeight =
-              header.offsetHeight;
-
-
-            const targetPosition =
-              target.offsetTop -
-              headerHeight -
-              10;
-
-
-            window.scrollTo({
-
-              top: targetPosition,
-
-              behavior: "smooth"
-
-            });
-
-          }
+          return;
 
         }
-      );
+
+
+        const target =
+          document.querySelector(targetId);
+
+
+        if (!target) return;
+
+
+        event.preventDefault();
+
+
+        const headerHeight =
+          header
+            ? header.offsetHeight
+            : 0;
+
+
+        const targetPosition =
+          target.getBoundingClientRect().top +
+          window.scrollY -
+          headerHeight -
+          10;
+
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth"
+        });
+
+      });
 
     });
 
 
-  /* =========================
-     AUTOMATIC FOOTER YEAR
-     ========================= */
+  /* =========================================================
+     ACTIVE NAVIGATION LINK
+     ========================================================= */
+
+  function updateActiveNavigation() {
+
+    if (!sections.length) return;
+
+
+    const headerHeight =
+      header
+        ? header.offsetHeight
+        : 0;
+
+
+    const scrollPosition =
+      window.scrollY +
+      headerHeight +
+      120;
+
+
+    let currentSection = "";
+
+
+    sections.forEach(section => {
+
+      const sectionTop =
+        section.offsetTop;
+
+
+      const sectionHeight =
+        section.offsetHeight;
+
+
+      const sectionId =
+        section.getAttribute("id");
+
+
+      if (
+        scrollPosition >= sectionTop &&
+        scrollPosition <
+          sectionTop + sectionHeight
+      ) {
+
+        currentSection =
+          sectionId;
+
+      }
+
+    });
+
+
+    navLinks.forEach(link => {
+
+      link.classList.remove("active");
+
+
+      const href =
+        link.getAttribute("href");
+
+
+      if (
+        currentSection &&
+        href === `#${currentSection}`
+      ) {
+
+        link.classList.add("active");
+
+      }
+
+    });
+
+  }
+
+
+  updateActiveNavigation();
+
+
+  window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+  );
+
+
+  /* =========================================================
+     AUTOMATIC COPYRIGHT YEAR
+     ========================================================= */
 
   const footer =
-    document.querySelector(
-      "footer"
-    );
+    document.querySelector("footer");
 
 
   if (footer) {
 
-    const copyright =
-      footer.querySelector(
-        "p"
-      );
+    const footerParagraphs =
+      footer.querySelectorAll("p");
 
 
-    if (copyright) {
+    if (footerParagraphs.length > 0) {
 
-      copyright.innerHTML =
+      footerParagraphs[0].innerHTML =
         `&copy; ${new Date().getFullYear()} Amos Mwansa. All Rights Reserved.`;
 
     }
@@ -495,76 +545,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================
-     CARD REVEAL ENHANCEMENT
-     ========================= */
-
-  const cards =
-    document.querySelectorAll(
-      ".project-card, .skill-category"
-    );
-
-
-  if (
-    "IntersectionObserver" in window
-  ) {
-
-    const cardObserver =
-      new IntersectionObserver(
-
-        entries => {
-
-          entries.forEach(
-            entry => {
-
-              if (
-                entry.isIntersecting
-              ) {
-
-                entry.target
-                  .classList
-                  .add(
-                    "card-visible"
-                  );
-
-
-                cardObserver
-                  .unobserve(
-                    entry.target
-                  );
-
-              }
-
-            }
-          );
-
-        },
-
-        {
-
-          threshold: 0.08
-
-        }
-
-      );
-
-
-    cards.forEach(
-      card => {
-
-        cardObserver.observe(
-          card
-        );
-
-      }
-    );
-
-  }
-
-
-  /* =========================
-     EXTERNAL LINKS SECURITY
-     ========================= */
+  /* =========================================================
+     EXTERNAL LINK SECURITY
+     ========================================================= */
 
   const externalLinks =
     document.querySelectorAll(
@@ -572,21 +555,86 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
 
-  externalLinks.forEach(
-    link => {
+  externalLinks.forEach(link => {
 
-      if (
-        !link.hasAttribute("rel")
-      ) {
+    link.setAttribute(
+      "rel",
+      "noopener noreferrer"
+    );
 
-        link.setAttribute(
-          "rel",
-          "noopener noreferrer"
-        );
+  });
 
-      }
+
+  /* =========================================================
+     EMAIL LINKS
+     ========================================================= */
+
+  const emailLinks =
+    document.querySelectorAll(
+      'a[href^="mailto:"]'
+    );
+
+
+  emailLinks.forEach(link => {
+
+    link.setAttribute(
+      "title",
+      "Send Amos an email"
+    );
+
+  });
+
+
+  /* =========================================================
+     TELEPHONE LINKS
+     ========================================================= */
+
+  const phoneLinks =
+    document.querySelectorAll(
+      'a[href^="tel:"]'
+    );
+
+
+  phoneLinks.forEach(link => {
+
+    link.setAttribute(
+      "title",
+      "Call Amos Mwansa"
+    );
+
+  });
+
+
+  /* =========================================================
+     CV DOWNLOAD LINK
+     ========================================================= */
+
+  const cvLinks =
+    document.querySelectorAll(
+      'a[href$=".pdf"]'
+    );
+
+
+  cvLinks.forEach(link => {
+
+    if (
+      link.hasAttribute("download")
+    ) {
+
+      link.setAttribute(
+        "title",
+        "Download Amos Mwansa CV"
+      );
 
     }
-  );
+
+  });
+
+
+  /* =========================================================
+     PAGE LOADED
+     ========================================================= */
+
+  body.classList.add("page-loaded");
 
 });
